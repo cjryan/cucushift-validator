@@ -8,6 +8,8 @@ gem 'rack', '>= 1.4.5'
 
 gem 'mysql2'
 gem 'sqlite3'
+gem 'execjs'
+gem 'therubyracer'
 
 
 # Gems used only for assets and not required
