@@ -13,8 +13,8 @@
 
 <% end %>
 
-<%= for @result.each do |iter|%>
-	<h1><%=	iter %></h1>
+<%= @result.each do |iter| %>
+   <h1><%= iter %></h1>
 <% end %>
 
 <h1><%= @debug_x %></h1>
