@@ -10,8 +10,8 @@ class PagesController < ApplicationController
 	    #the verification
             @result.push (false)
 	    Re.all.each do |str|
-              str.sub!(/^\//) #remove /.../
-              str.sub!(/\/$//) #remove /.../
+              str.sub!(/^\//,'') #remove /.../
+              str.sub!(/\/$/,'') #remove /.../
               @debug_x = str
 	      if line =~ /#{str}/
                  @result[line_number] = true
