@@ -1,10 +1,11 @@
 class PagesController < ApplicationController
   def home
 	@title = "Cucushift Validator"
+	@val_code = params[:user_code]
+        return 0 unless @val_code
+
         @result = []
         line_number = 0 
-	@val_code = params[:user_code]
-        return nil unless @val_code
         
 	#Iterate over each line of code	
 	@val_code.split("\n").each do |line|
