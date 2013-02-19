@@ -15,7 +15,7 @@ class PagesController < ApplicationController
               re = str[:re_value]
               re.sub!(/^\//,'') #remove /.../
               re.sub!(/\/$/,'') #remove /.../
-              @debug_x = re
+              #@debug_x = re
 	      if line =~ /#{re}/
                  @result[line_number] = true
                  break
