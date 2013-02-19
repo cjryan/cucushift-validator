@@ -1,6 +1,8 @@
 class PagesController < ApplicationController
   def home
-	#@re = Re.new
 	@title = "Cucushift Validator"
+
+	@val_code = params[:user_code]	
   end
+
 end

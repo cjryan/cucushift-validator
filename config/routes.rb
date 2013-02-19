@@ -1,5 +1,8 @@
 RailsApp::Application.routes.draw do
   get "pages/home"
+  
+  #This connects the controller to the view
+  match "/pages/:id" => "pages#home"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
