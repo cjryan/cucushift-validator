@@ -12,3 +12,9 @@
    <%= submit_tag 'Validate' %>
 
 <% end %>
+
+<ul>
+	<% @re.each do |regex| %>
+		<li><%=regex.name %></li>
+	<% end %>
+</ul>
