@@ -4,7 +4,7 @@ class PagesController < ApplicationController
 
 	@val_code = params[:user_code]	
 
-	@re = Re.find(10)
+	#@re = Re.find(10)
   end
 
 end
