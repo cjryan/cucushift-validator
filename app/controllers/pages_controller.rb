@@ -16,7 +16,7 @@ class PagesController < ApplicationController
 	    line = line.strip
 
 	    #remove leading words: When, Then, And, or Given
-	    line.gsub!(/^When/,'')
+	    line.gsub!(/^When/,'Zvezda')
 
 	    Re.all.each do |str|
               re = str[:re_value]
