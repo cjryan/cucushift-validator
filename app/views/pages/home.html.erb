@@ -7,7 +7,7 @@
 
    <p>Enter your name: </p>
 
-   <%= text_area_tag 'user_code', @val_code %>
+   <%= text_area_tag 'user_code', :cols => "80", :rows => "10", @val_code %>
 
    <%= submit_tag 'Validate' %>
 
