@@ -8,7 +8,7 @@ class PagesController < ApplicationController
 	#Iterate over each line of code	
 	@val_code.split("\n").each_with_index do |line, line_number|
 
-            #if line starts with 'Feature: ' remove it
+            #if line starts with 'Feature: ', 'Scenario: ', or a comment remove it
             line.gsub!(/^\s*(Feature:|Scenario:)\s+(.*)/,'')
 	    line.gsub!(/^#(.*)/,'')
                     
