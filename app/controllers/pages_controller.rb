@@ -10,7 +10,7 @@ class PagesController < ApplicationController
 	#Iterate over each line of code	
 	@val_code.split("\n").each do |line|
 	    #the verification
-            @result.push (false)
+            #@result.push (false)
 	    Re.all.each do |str|
               re = str[:re_value]
               re.sub!(/^\//,'') #remove /.../
