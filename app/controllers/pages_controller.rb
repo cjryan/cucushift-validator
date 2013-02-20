@@ -12,7 +12,7 @@ class PagesController < ApplicationController
             @result[line_number] = false
 
 	    #if line starts with 'Feature: ' remove it
-            line.gsub!(/^Feature: $/,'')
+	    line.gsub!(/^Feature:(.*)/,'')
 
 	    #remove leading whitespace from user input
 	    line.chomp!
