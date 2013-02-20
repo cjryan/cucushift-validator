@@ -5,8 +5,6 @@ class PagesController < ApplicationController
         @result = {}
         return 0 unless @val_code
 
-        line_number = 0 
-        
 	#Iterate over each line of code	
 	@val_code.split("\n").each_with_index do |line, line_number|
 	    #the verification
@@ -16,6 +14,8 @@ class PagesController < ApplicationController
               re = str[:re_value]
               re.sub!(/^\//,'') #remove /.../
               re.sub!(/\/$/,'') #remove /.../
+              @result[line_number] = "#{re} =~ #{line}"
+
 	      if line =~ /#{re}/
                    #@result[line_number] = line + ' true'
             	   @result[line_number] = true
