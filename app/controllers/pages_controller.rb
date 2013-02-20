@@ -10,6 +10,7 @@ class PagesController < ApplicationController
 	    #the verification
 	    next unless line.length > 1
             @result[line_number] = false
+	    line.chomp!
 	    Re.all.each do |str|
               re = str[:re_value]
               re.sub!(/^\//,'') #remove /.../
