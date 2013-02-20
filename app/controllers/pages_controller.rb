@@ -10,24 +10,18 @@ class PagesController < ApplicationController
 	#Iterate over each line of code	
 	@val_code.split("\n").each do |line|
 	    #the verification
-            #@result.push (false)
+            @result.push (false)
 	    Re.all.each do |str|
               re = str[:re_value]
               re.sub!(/^\//,'') #remove /.../
               re.sub!(/\/$/,'') #remove /.../
-              #@debug_x = re
 	      if line =~ /#{re}/
-                   @result[line_number] = line + 'true'
+                   @result[line_number] = line + ' true'
                  #break
-	      else
-		   @result.push (false)
-	      end
 	    end
             line_number += 1
 	end
-
 	#@re = Re.find(10)
-        #@result
   end
 
 end
