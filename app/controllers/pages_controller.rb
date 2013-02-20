@@ -14,7 +14,7 @@ class PagesController < ApplicationController
 	    #if line starts with 'Feature: ' remove it
             #line.sub!(/^Feature: /,//)
             if line.match(/^Feature: /)
-		line.clear
+		line.delete!
 	    end
 
 	    #remove leading whitespace from user input
