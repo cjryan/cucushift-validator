@@ -9,7 +9,8 @@ class PagesController < ApplicationController
 	@val_code.split("\n").each_with_index do |line, line_number|
 
             #if line starts with 'Feature: ' remove it
-            line.gsub!(/^\s*(Feature:|#|Scenario:)\s+(.*)/,'')
+            line.gsub!(/^\s*(Feature:|Scenario:)\s+(.*)/,'')
+	    line.gsub!(/^#(.*)/,'')
                     
 	    #the verification
 	    next unless line.length > 1
