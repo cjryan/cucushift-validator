@@ -11,6 +11,12 @@ class PagesController < ApplicationController
 	    next unless line.length > 1
             @result[line_number] = false
 
+	    #if line starts with 'Feature: ' remove it
+            #line.sub!(/^Feature: /,//)
+            if line.match(/^Feature: /)
+		line.clear
+	    end
+
 	    #remove leading whitespace from user input
 	    line.chomp!
 	    line = line.strip
