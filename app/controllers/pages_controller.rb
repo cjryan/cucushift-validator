@@ -25,7 +25,7 @@ class PagesController < ApplicationController
 	end
 
 	#@re = Re.find(10)
-        @result
+        #@result
   end
 
 end
