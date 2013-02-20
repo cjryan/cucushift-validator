@@ -19,7 +19,9 @@ class PagesController < ApplicationController
 	      if line =~ /#{re}/
                    @result[line_number] = line + 'true'
                  #break
-              end
+	      else
+		   @result.push (false)
+	      end
 	    end
             line_number += 1
 	end
