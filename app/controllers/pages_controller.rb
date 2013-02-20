@@ -17,7 +17,7 @@ class PagesController < ApplicationController
               re.sub!(/\/$/,'') #remove /.../
 	      if line =~ /#{re}/
                    #@result[line_number] = line + ' true'
-                   @result[line_number].push (line + ' true')
+                   @result.push (line + ' true')
                  #break
               end
 	    end
