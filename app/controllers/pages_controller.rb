@@ -11,10 +11,7 @@ class PagesController < ApplicationController
 	    next unless line.length > 1
             @result[line_number] = false
 	    line.chomp!
-<<<<<<< HEAD
 	    line = line.strip
-=======
->>>>>>> 0dcce0aa8a72bd66a71b84366dfc01506869d50e
 	    Re.all.each do |str|
               re = str[:re_value]
               re.sub!(/^\//,'') #remove /.../
