@@ -7,12 +7,14 @@ class PagesController < ApplicationController
 
 	#Iterate over each line of code	
 	@val_code.split("\n").each_with_index do |line, line_number|
+
+            #if line starts with 'Feature: ' remove it
+            line.gsub!(/^\s*(Feature:)\s+(.*)/,'')
+                    
 	    #the verification
 	    next unless line.length > 1
             @result[line_number] = false
 
-	    #if line starts with 'Feature: ' remove it
-	    line.gsub!(/^\s*(Feature:)\s+(.*)/,'')
 
 	    #remove leading whitespace from user input
 	    line.chomp!
