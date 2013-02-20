@@ -10,8 +10,14 @@ class PagesController < ApplicationController
 	    #the verification
 	    next unless line.length > 1
             @result[line_number] = false
+
+	    #remove leading whitespace from user input
 	    line.chomp!
 	    line = line.strip
+
+	    #remove leading words: When, Then, And, or Given
+	    line.sub!(/^When/,'')
+
 	    Re.all.each do |str|
               re = str[:re_value]
               re.sub!(/^\//,'') #remove /.../
