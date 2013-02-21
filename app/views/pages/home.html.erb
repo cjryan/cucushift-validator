@@ -5,6 +5,16 @@
 $(function() {
 	$("#user_code").linedtextarea();
 	/*$("#zebra_table").linedtextarea();*/
+	$(".stripeMe tr:even").addClass("alt");
+
+	$(".stripeMe tr").mouseover(function() {
+		$(this).addClass("over");
+	});
+
+	$(".stripeMe tr").mouseout(function() {
+		$(this).removeClass("over");
+	});
+
 });
 </script>
 
