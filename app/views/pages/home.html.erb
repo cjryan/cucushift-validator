@@ -32,7 +32,10 @@ $(function() {
 <div id="zebra_table">
 	<table class="stripeMe">
 	<% @result.each do |iter| %>
-		<tr><td><%= iter %></td></tr>
+	<!--If the variable contains 'true,' text color -> green. else, red. -->
+		<%if iter =~ /true/%>
+			<tr><td style="color: green"><%= iter %></td></tr>
+		<% end %>
 	<% end %>
 	</table>
 </div><!-- end zebra_table -->
