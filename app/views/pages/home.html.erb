@@ -34,7 +34,7 @@ $(function() {
 	<% @result.each do |iter| %>
 	<!--If the variable contains 'true,' text color -> green. else, red. -->
 		<%if iter =~ /true/%>
-			<tr><td style="color: green"><%= iter %></td></tr>
+			<%= puts '<tr><td style="color: green">' %> <%= iter %> <%= puts '</td></tr>' %>
 		<% end %>
 	<% end %>
 	</table>
