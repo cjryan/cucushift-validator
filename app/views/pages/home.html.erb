@@ -34,7 +34,7 @@ $(function() {
 	<% @result.each_pair do |key, value| %>
 	<!--If the variable contains 'true,' text color -> green. else, red. -->
 		<%if value %>
-			<%= puts '<tr><td style="color: green">' %> <%= key + ", " + value %> <%= puts '</td></tr>' %>
+			<%= puts '<tr><td style="color: green">' %> <%= value %> <%= puts '</td></tr>' %>
 		<% end %>
 	<% end %>
 	</table>
