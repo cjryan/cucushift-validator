@@ -3,7 +3,6 @@ class PagesController < ApplicationController
 	@title = "Cucushift Validator"
 	@val_code = params[:user_code]
         @result = {}
-	line_number = 1
         return 0 unless @val_code
 
 	#Iterate over each line of code	
@@ -15,7 +14,7 @@ class PagesController < ApplicationController
                     
 	    #the verification
 	    next unless line.length > 1
-            @result[line_number] = false
+            @result[line_number + 1] = false
 
 
 	    #remove leading whitespace from user input
@@ -29,11 +28,11 @@ class PagesController < ApplicationController
               re = str[:re_value]
               re.sub!(/^\//,'') #remove /.../
               re.sub!(/\/$/,'') #remove /.../
-              @result[line_number] = "#{re} =~ #{line}"
+              @result[line_number + 1] = "#{re} =~ #{line}"
 
 	      if line =~ /#{re}/
                    #@result[line_number] = line + ' true'
-            	   @result[line_number] = true
+            	   @result[line_number + 1] = true
                    break
               end
 	    end
