@@ -35,11 +35,14 @@ class PagesController < ApplicationController
               re.sub!(/\/$/,'') #remove /.../
               #@result[line_number + 1] = "#{re} =~ #{line}"
 
-	      if line =~ /#{re}/
-                   #@result[line_number] = line + ' true'
-            	   @result[line_number + 1] = true
-                   break
-              end
+	      begin
+		      if line =~ /#{re}/
+			   #@result[line_number] = line + ' true'
+			   @result[line_number + 1] = true
+			   break
+		      end
+               rescue
+               end
 	    end
 	end
 	#@re = Re.find(10)
