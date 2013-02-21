@@ -14,6 +14,9 @@ class PagesController < ApplicationController
                     
 	    #the verification
 	    next unless line.length > 1
+
+	    #The +1 is added to the line number to account for the 0 offset. This is done to match up with 
+	    #the line numbers in the text area in the view.
             @result[line_number + 1] = false
 
 
