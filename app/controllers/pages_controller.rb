@@ -3,6 +3,7 @@ class PagesController < ApplicationController
 	@title = "Cucushift Validator"
 	@val_code = params[:user_code]
         @result = {}
+	line_number = 1
         return 0 unless @val_code
 
 	#Iterate over each line of code	
