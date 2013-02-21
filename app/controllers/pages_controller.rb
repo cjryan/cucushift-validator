@@ -3,6 +3,7 @@ class PagesController < ApplicationController
 	@title = "Cucushift Validator"
 	@val_code = params[:user_code]
         @result = {}
+        @result2 = {}
         return 0 unless @val_code
 
 	#Iterate over each line of code	
@@ -18,6 +19,7 @@ class PagesController < ApplicationController
 	    #The +1 is added to the line number to account for the 0 offset. This is done to match up with 
 	    #the line numbers in the text area in the view.
             @result[line_number + 1] = false
+            @result2[line_number + 1] = line
 
 
 	    #remove leading whitespace from user input
