@@ -123,36 +123,5 @@
     <h1>
       OpenShift - Rails 3.2.12
     </h1>
-    <p>
-    This application was created using <a href="https://github.com/openshift/rails-example">this OpenShift quickstart</a>.
-    </p>
-    <p>
-    It contains everything you need to be up and running with a fully functional Rails application!
-    </p>
-    <p>
-    In order to commit to your new project, go to your projects git repo (created with the rhc app create command).  Make your changes, then run:
-    </p>
-    <pre>
-    git commit -a -m 'Some commit message'
-    git push
-  </pre>
-    <p>
-    Then reload this page.
-    </p>
-
-    <h2>
-      What's next?
-    </h2>
-    <ul>
-      <li>
-      Why not visit us at <a href="http://openshift.redhat.com">http://openshift.redhat.com</a>, or
-      </li>
-      <li>
-      You could get help in the <a href="http://www.redhat.com/openshift">OpenShift forums</a>, or
-      </li>
-      <li>
-      You're welcome to come chat with us in our IRC channel at #openshift on freenode.net
-      </li>
-    </ul>
   </body>
 </html>
