@@ -4,7 +4,7 @@
 <script>
 $(function() {
 	$("#user_code").linedtextarea();
-	$("#zebra_table").linedtextarea();
+	/*$("#zebra_table").linedtextarea();*/
 });
 </script>
 
@@ -20,7 +20,9 @@ $(function() {
 <% end %>
 
 <div id="zebra_table">
+	<table class="stripeMe">
 	<%= @result.each do |iter| %>
-		<%= iter %><br />
+		<tr><td><%= iter %></td></tr>
 	<% end %>
+	</table>
 </div><!-- end zebra_table -->
