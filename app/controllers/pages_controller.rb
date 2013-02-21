@@ -31,7 +31,7 @@ class PagesController < ApplicationController
               re = str[:re_value]
               re.sub!(/^\//,'') #remove /.../
               re.sub!(/\/$/,'') #remove /.../
-              @result[line_number + 1] = "#{re} =~ #{line}"
+              #@result[line_number + 1] = "#{re} =~ #{line}"
 
 	      if line =~ /#{re}/
                    #@result[line_number] = line + ' true'

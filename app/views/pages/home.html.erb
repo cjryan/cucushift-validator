@@ -31,11 +31,10 @@ $(function() {
 
 <div id="zebra_table">
 	<table class="stripeMe">
-	<% @result.each do |iter| %>
+	<% @result.each_pair do |key, value| %>
 	<!--If the variable contains 'true,' text color -> green. else, red. -->
-		<%= iter %>
-		<%if iter =~ /true/%>
-			<%= puts '<tr><td style="color: green">' %> <%= iter %> <%= puts '</td></tr>' %>
+		<%if value %>
+			<%= puts '<tr><td style="color: green">' %> <%= key, value %> <%= puts '</td></tr>' %>
 		<% end %>
 	<% end %>
 	</table>
