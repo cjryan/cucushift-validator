@@ -6,7 +6,7 @@ class PagesController < ApplicationController
         @result2 = {}
         return 0 unless @val_code
 
-	 dbversion.all.each do |db_vers|
+	 Dbversion.all.each do |db_vers|
 		@dbv = db_vers[:version]
 	end
 
