@@ -1,1 +1,12 @@
-<h1>You've reached the instructions page!</h1>
+<h1>Instructions</h1>
+
+<p>In the ~/OSTEST directory:</p>
+<pre>
+$> git pull 
+$>cd bin/
+$> ./get_cucumber_regex.sh > ~/Desktop/new_dump.sql (or wherever you want to put and call the new sql file)
+make sure all lines look ok (i.e. correct quotations, correct double-escapes of backslashes, etc.)
+$> rhc port-forward cucushiftvalidator
+take note of IP address and port
+$> cat ~/Desktop/new_dump.sql |mysql -h IP_ADDRESS_FROM_ABOVE -P PORT_FROM_ABOVE -u OPENSHIFT_MYSQL_USER -p [specify db here, too](it will ask for your openshift mysql pass here)
+</pre>
