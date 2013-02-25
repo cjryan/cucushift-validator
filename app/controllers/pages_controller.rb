@@ -6,6 +6,10 @@ class PagesController < ApplicationController
         @result2 = {}
         return 0 unless @val_code
 
+	Re.all.each do |db_vers|
+		@dbv = db_vers[:version]
+	end
+
 	#Iterate over each line of code	
 	@val_code.split("\n").each_with_index do |line, line_number|
 
