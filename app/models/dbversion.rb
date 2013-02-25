@@ -1,2 +1,2 @@
-class Dbversion < AtiveRecord::Base
+class Dbversion < ActiveRecord::Base
 end
