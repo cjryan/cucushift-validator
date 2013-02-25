@@ -51,5 +51,6 @@ class PagesController < ApplicationController
 	end
 	#@re = Re.find(10)
   end
-
+  def instructions
+  end
 end
