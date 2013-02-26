@@ -64,7 +64,7 @@ class PagesController < ApplicationController
      @title = "Cucushift Validator Status"
      begin
        uploaded_io = params[:sql_import][:sql_gz]
-       File.open(Rails.root.join(ENV['OPENSHIFT_TMP_DIR'], 'ZZ'+uploaded_io.original_filename), 'w') do |file|
+       File.open(Rails.root.join('/tmp/', 'ZZ'+uploaded_io.original_filename), 'w') do |file|
          file.write(uploaded_io.read)
        end
      rescue => e
