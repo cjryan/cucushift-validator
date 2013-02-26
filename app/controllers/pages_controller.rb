@@ -54,7 +54,7 @@ class PagesController < ApplicationController
   def instructions
   end
   def status
-    @db_for_stats = Re
+    @db_for_stats = Re.all
   end
   def push
   end
