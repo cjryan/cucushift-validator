@@ -2,11 +2,16 @@
   <title><%= @title %></title>
 </head>
 
-<h1>Status of steps</h1>
+<h1>Status of Cucushift steps</h1>
+
+<ul>
+  <li>All: <%= @all_steps %>
+  <li>Implemented: <%= @to_be_implemented %>
+</ul>
 
 <table>
 <tr><th>Step name</td><th>number of steps used</th><th>rubular</th></tr>
 <%  @db_for_stats.each do |item| %>
-  <tr><td><%= item[:re_value] %></td><td>?</td><td><a href="http://rubular.com/?regex=<%= item[:re_value] %>">rubular</a></td></tr>
+  <tr><td><%= item[:re_value] %></td><td><a href="TODO"> item[:re_used_times]</a> </td><td><a href="http://rubular.com/?regex=<%= item[:re_value] %>">rubular</a></td></tr>
 <% end %>
 </table>
