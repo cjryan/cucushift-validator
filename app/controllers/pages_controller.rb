@@ -60,5 +60,10 @@ class PagesController < ApplicationController
   end
   def push
     @sql_file = params[:sql_gz_file]
+     uploaded_io = params[:person][:sql]
+     File.open(Rails.root.join(ENV['OPENSHIFT_TMP_DIR'], uploaded_io.original_filename), 'w') do |file|
+       file.write(uploaded_io.read)
+     end
+
   end
 end
