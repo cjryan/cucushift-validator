@@ -61,6 +61,7 @@ class PagesController < ApplicationController
   end
 
   def push
+     @title = "Cucushift Validator Status"
      return 
      begin
        uploaded_io = params[:sql_import][:sql_gz]
