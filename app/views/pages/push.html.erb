@@ -2,9 +2,9 @@
 
 <%= form_tag({:action => :push}, :multipart => true) do %>
   <%= file_field_tag 'sql_gz' %>
-  <%= f.submit %>
 <% end %>
    
 <= form_for @sql_import do |f| %>
   <= f.file_field :sql_gz %>
+  <= f.submit %>
 < end %>
