@@ -1,1 +1,10 @@
 <p>status stuff goes here</p>
+
+
+<table>
+<tr><th>Step name</td><th>number of steps used</th></tr>
+<%=  @Re.each do |item| %>
+  <tr><td><%= item %></td><td></td></tr>
+
+<%= end %>
+</table>
