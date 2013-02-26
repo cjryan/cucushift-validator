@@ -4,11 +4,11 @@ class PagesController < ApplicationController
 	@val_code = params[:user_code]
         @result = {}
         @result2 = {}
-        return 0 unless @val_code
 
 	 Step_db_version.all.each do |db_vers|
 		@dbv = db_vers[:version]
 	end
+        return 0 unless @val_code
 
 	#Iterate over each line of code	
 	@val_code.split("\n").each_with_index do |line, line_number|
@@ -54,8 +54,10 @@ class PagesController < ApplicationController
   def instructions
   end
   def status
+    @title = "Cucushift Validator Status"
     @db_for_stats = Re.all
   end
   def push
+    @sql_file = params[:sql_gz_file]
   end
 end
