@@ -53,4 +53,6 @@ class PagesController < ApplicationController
   end
   def instructions
   end
+  def status
+  end
 end

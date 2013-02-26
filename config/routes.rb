@@ -2,6 +2,7 @@ RailsApp::Application.routes.draw do
   root :to => 'pages#home'
   get "pages/home"
   get "pages/instructions"
+  get "pages/status"
   #This connects the controller to the view
   match "/pages/:id" => "pages#home"
 
