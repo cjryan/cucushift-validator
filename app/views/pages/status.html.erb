@@ -3,8 +3,7 @@
 
 <table>
 <tr><th>Step name</td><th>number of steps used</th></tr>
-<%=  @Re.each do |item| %>
-  <tr><td><%= item %></td><td></td></tr>
-
+<%=  @db_for_stats.each do |item| %>
+  <tr><td><%= item[:re_value] %></td><td></td></tr>
 <%= end %>
 </table>

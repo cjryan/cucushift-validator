@@ -54,6 +54,6 @@ class PagesController < ApplicationController
   def instructions
   end
   def status
-    @Re = Re
+    @db_for_stats = Re
   end
 end
