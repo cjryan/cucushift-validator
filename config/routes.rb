@@ -3,6 +3,7 @@ RailsApp::Application.routes.draw do
   get "pages/home"
   get "pages/instructions"
   get "pages/status"
+  get "pages/push"
   #This connects the controller to the view
   match "/pages/:id" => "pages#home"
 

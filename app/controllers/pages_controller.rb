@@ -55,4 +55,6 @@ class PagesController < ApplicationController
   end
   def status
   end
+  def push
+  end
 end
