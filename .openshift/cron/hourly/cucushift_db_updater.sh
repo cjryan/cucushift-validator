@@ -6,30 +6,10 @@
 
 # This script is for updating the cucushift validator web application database.
 
-#Setup the temporary folder name
-TMP_FOLDER="cucushift_tmp_"
-
-set -e
-
-#Create the temporary directory
-cd $OPENSHIFT_TMP_DIR
-
-#Clone the git repository
-if [ ! -d ostest ]; then
-  git clone git://qe-git.englab.nay.redhat.com/hss-qe/openshift/openshift-express/ostest
-else
-  pushd ostest;git pull;popd
-fi
-
-  
-
-#Setup the $OSTEST_HOME env variable
-cd ostest
-export OSTEST_HOME=$(pwd)
-
-#Run the get_cucumber_regex script, and dump the contents to an sql file
-FRESH_DUMP="${OPENSHIFT_TMP_DIR}/cucushift_dump.sql"
-./bin/get_cucumber_regex.sh > $FRESH_DUMP
+#Unzip the cucushift_dump.sql.tar.gz sent over by bulldozer
+cd /tmp
+tar -xvzf cucushift_dump.sql.tar.gz
+FRESH_DUMP="cucushift_dump.sql"
 
 #Create an md5 sum of the sql file to see if anything has changed since the last time
 NEWMD5=$(md5sum $FRESH_DUMP | awk '{print $1}')
