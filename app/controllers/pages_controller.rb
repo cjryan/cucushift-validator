@@ -56,4 +56,6 @@ class PagesController < ApplicationController
   def status
     @db_for_stats = Re
   end
+  def push
+  end
 end
