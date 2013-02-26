@@ -54,15 +54,19 @@ class PagesController < ApplicationController
   def instructions
     @title = "Cucushift Validator Instructions"
   end
+
   def status
     @title = "Cucushift Validator Status"
     @db_for_stats = Re.all
   end
-  def push
-     uploaded_io = params[:sql_import][:sql_gz]
-     File.open(Rails.root.join(ENV['OPENSHIFT_TMP_DIR'], uploaded_io.original_filename), 'w') do |file|
-       file.write(uploaded_io.read)
-     end
 
+  def push
+     begin
+       uploaded_io = params[:sql_import][:sql_gz]
+       File.open(Rails.root.join(ENV['OPENSHIFT_TMP_DIR'], uploaded_io.original_filename), 'w') do |file|
+         file.write(uploaded_io.read)
+       end
+     rescue => e
+     end
   end
 end
