@@ -67,6 +67,7 @@ class PagesController < ApplicationController
          file.write(uploaded_io.read)
        end
      rescue => e
+       @error_message = e
      end
   end
 end
