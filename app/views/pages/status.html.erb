@@ -1,1 +1,9 @@
 <p>status stuff goes here</p>
+
+
+<table>
+<tr><th>Step name</td><th>number of steps used</th></tr>
+<%=  @db_for_stats.each do |item| %>
+  <tr><td><%= item[:re_value] %></td><td></td></tr>
+<%= end %>
+</table>
