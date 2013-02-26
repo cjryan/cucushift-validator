@@ -52,6 +52,7 @@ class PagesController < ApplicationController
 	#@re = Re.find(10)
   end
   def instructions
+    @title = "Cucushift Validator Instructions"
   end
   def status
     @title = "Cucushift Validator Status"
