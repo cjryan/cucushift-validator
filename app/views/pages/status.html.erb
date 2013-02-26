@@ -2,8 +2,8 @@
 
 
 <table>
-<tr><th>Step name</td><th>number of steps used</th></tr>
+<tr><th>Step name</td><th>number of steps used</th><th>rubular</th></tr>
 <%  @db_for_stats.each do |item| %>
-  <tr><td><%= item[:re_value] %></td><td></td></tr>
+  <tr><td><%= item[:re_value] %></td><td>?</td><td><a href="http://rubular.com/?regex=<%= item[:re_value] %>">rubular</a></td></tr>
 <% end %>
 </table>
