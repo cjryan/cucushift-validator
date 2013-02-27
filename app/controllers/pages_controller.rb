@@ -64,6 +64,7 @@ class PagesController < ApplicationController
      @title = "Cucushift Validator Status"
      begin
        uploaded_io = params[:sql_gz]
+       logger.info ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>The uploaded_io is #{uploaded_io}"
        logger.info ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>The params are #{params[:sql_gz]}"
        #Add some logic here to check if the file is a tar.gz file.
        @path_for_file = Rails.root.join('/tmp/', 'ZZ'+uploaded_io.original_filename)
