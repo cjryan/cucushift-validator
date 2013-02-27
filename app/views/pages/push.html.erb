@@ -2,5 +2,6 @@
 
 <%= form_tag({:action => :push}, :multipart => true) do %>
   <%= file_field_tag 'sql_gz' %>
+  <br />
   <%= submit_tag "Upload" %>
 <% end %>

@@ -64,8 +64,8 @@ class PagesController < ApplicationController
      @title = "Cucushift Validator Status"
      begin
        uploaded_io = params[:sql_gz]
-       #File.open(Rails.root.join('/tmp/', 'ZZ'+uploaded_io.original_filename), 'w') do |file|
-       File.open(Rails.root.join('public', 'uploads', uploaded_io.original_filename), 'w') do |file|
+       #Add some logic here to check if the file is a tar.gz file.
+       File.open(Rails.root.join('/tmp/', 'ZZ'+uploaded_io.original_filename), 'w') do |file|
          file.write(uploaded_io.read)
        end
      rescue => e
