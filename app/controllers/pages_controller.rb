@@ -62,7 +62,6 @@ class PagesController < ApplicationController
 
   def push
      @title = "Cucushift Validator Status"
-     return 
      begin
        uploaded_io = params[:sql_import][:sql_gz]
        File.open(Rails.root.join(ENV['OPENSHIFT_TMP_DIR'], uploaded_io.original_filename), 'w') do |file|
