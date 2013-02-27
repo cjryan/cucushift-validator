@@ -8,7 +8,7 @@
 
 #Unzip the cucushift_dump.sql.tar.gz sent over by bulldozer
 cd /tmp
-tar -xvzf cucushift_dump.sql.tar.gz
+tar -xvjf cucushift_dump.sql.tar.gz
 FRESH_DUMP="cucushift_dump.sql"
 
 #Create an md5 sum of the sql file to see if anything has changed since the last time
