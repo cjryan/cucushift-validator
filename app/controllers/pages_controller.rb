@@ -68,7 +68,7 @@ class PagesController < ApplicationController
        @path_for_file = Rails.root.join('/tmp/', uploaded_io.original_filename)
        logger.info "path_for_file=#{@path_for_file}"
        logger.info ENV['OPENSHIFT_TMP_DIR']
-       File.open(@path_for_file, 'w') do |file|
+       File.open(@path_for_file, 'wb') do |file|
          file.write(uploaded_io.read)
        end
      rescue => e
