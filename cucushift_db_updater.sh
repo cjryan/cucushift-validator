@@ -16,7 +16,7 @@ NEWMD5=$(md5sum $FRESH_DUMP | awk '{print $1}')
 
 #Get the mysql value for hash here
 HASH=$(mysql -h $OPENSHIFT_MYSQL_DB_HOST -P $OPENSHIFT_MYSQL_DB_PORT -u $OPENSHIFT_MYSQL_DB_USERNAME -p$OPENSHIFT_MYSQL_DB_PASSWORD cucushiftvalidator --skip-column-names -e "SELECT dbhash FROM step_db_versions;" |tail -1)
-echo "$HASH cucushift_dump.sql" > list.md5
+echo "$HASH  cucushift_dump.sql" > list.md5
 cat list.md5
 md5sum -c list.md5
 #RESULT=$(echo "$HASH cucushift_dump.sql" | md5sum -c | awk '{ print $2 }')
