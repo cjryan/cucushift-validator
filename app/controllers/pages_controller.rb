@@ -5,6 +5,8 @@ class PagesController < ApplicationController
         @result = {}
         @result2 = {}
 
+	logger.info "++++++++++++++++++++++++++++++++++++++++The params are #{params[:sql_gz]}"		
+
 	 Step_db_version.all.each do |db_vers|
 		@dbv = db_vers[:version]
 	end
