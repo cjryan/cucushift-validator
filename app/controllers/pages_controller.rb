@@ -5,8 +5,6 @@ class PagesController < ApplicationController
         @result = {}
         @result2 = {}
 
-	logger.info "++++++++++++++++++++++++++++++++++++++++The params are #{params[:sql_gz]}"		
-
 	 Step_db_version.all.each do |db_vers|
 		@dbv = db_vers[:version]
 	end
@@ -66,18 +64,16 @@ class PagesController < ApplicationController
      @title = "Cucushift Validator Status"
      begin
        uploaded_io = params[:sql_gz]
-       logger.info ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>The uploaded_io is #{uploaded_io}"
-       logger.info ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>The params are #{params[:sql_gz]}"
        #Add some logic here to check if the file is a tar.gz file.
-       @path_for_file = Rails.root.join('/tmp/', 'ZZ'+uploaded_io.original_filename)
-       logger.info "path_for_file=#{@path_for_file}"
-       logger.info ENV['OPENSHIFT_TMP_DIR']
+       @path_for_file = Rails.root.join('/tmp/', uploaded_io.original_filename)
+       #logger.info "path_for_file=#{@path_for_file}"
+       #logger.info ENV['OPENSHIFT_TMP_DIR']
        File.open(@path_for_file, 'w') do |file|
          file.write(uploaded_io.read)
        end
      rescue => e
        @error_message = e
-       logger.info "ERR: #{@error_message}"
+       #logger.info "ERR: #{@error_message}"
      end
   end
 end
