@@ -1,6 +1,7 @@
 <p>Push stuff goes here</p>
 
 <p>Error: <%= @error_message  %></p>
+<p>file: <%= @path_for_file %></p>
 
 <%= form_tag({:action => :push}, :multipart => true) do %>
   <%= file_field_tag 'sql_gz' %>

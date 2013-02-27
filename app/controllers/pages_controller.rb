@@ -65,7 +65,8 @@ class PagesController < ApplicationController
      begin
        uploaded_io = params[:sql_gz]
        #Add some logic here to check if the file is a tar.gz file.
-       File.open(Rails.root.join('/tmp/', 'ZZ'+uploaded_io.original_filename), 'w') do |file|
+       @path_for_file = Rails.root.join('/tmp/', 'ZZ'+uploaded_io.original_filename)
+       File.open(@path_for_file, 'w') do |file|
          file.write(uploaded_io.read)
        end
      rescue => e
