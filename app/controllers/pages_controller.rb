@@ -65,7 +65,7 @@ class PagesController < ApplicationController
      begin
        uploaded_io = params[:sql_gz]
        json_uploaded_io = params[:json_upload]
-       logger.info ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>The JSON Uploader Info is: " json_uploaded_io
+       logger.info ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>The JSON Uploader Info is: #{json_uploaded_io}"
 
        #Add some logic here to check if the file is a .bz2 file.
        @path_for_file = Rails.root.join(ENV['OPENSHIFT_TMP_DIR'], 'cucushift_dump.sql.bz2')
