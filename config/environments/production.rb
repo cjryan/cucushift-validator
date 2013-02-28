@@ -2,6 +2,7 @@ RailsApp::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
   config.assets.precompile += ['jquery-linedtextarea.js']
   config.assets.precompile += ['jquery-linedtextarea.css']
+  config.assets.precompile += ['jquery.js']
   config.assets.precompile += ['jquery-ui.js']
   # Code is not reloaded between requests
   config.cache_classes = true
