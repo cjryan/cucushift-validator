@@ -79,7 +79,7 @@ class PagesController < ApplicationController
        logger.info "path_for_file=#{@path_for_json_file}"
        logger.info ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>The JSON Uploader Info is: #{json_uploaded_io}"
        File.open(@path_for_json_file, 'wb') do |jsonfile|
-	  file.write(json_uploaded_io.read)
+	  jsonfile.write(json_uploaded_io.read)
        end
      rescue => e
        @error_message = e
