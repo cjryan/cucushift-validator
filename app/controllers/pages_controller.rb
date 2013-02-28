@@ -77,10 +77,10 @@ class PagesController < ApplicationController
 		end
        end
 
+       if json_uploaded_io != nil
        @path_for_json_file = Rails.root.join(ENV['OPENSHIFT_TMP_DIR'], json_uploaded_io.original_filename)
        logger.info "path_for_file=#{@path_for_json_file}"
        logger.info ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>The JSON Uploader Info is: #{json_uploaded_io}"
-       if json_uploaded_io != nil
 	       File.open(@path_for_json_file, 'wb') do |jsonfile|
 	       		jsonfile.write(json_uploaded_io.read)
 	       end
