@@ -73,15 +73,17 @@ class PagesController < ApplicationController
        #The write mode should be 'wb' to avoid encoding errors.
        if uploaded_io != nil
        		File.open(@path_for_file, 'wb') do |file|
-        	file.write(uploaded_io.read)
+        		file.write(uploaded_io.read)
 		end
        end
 
        @path_for_json_file = Rails.root.join(ENV['OPENSHIFT_TMP_DIR'], json_uploaded_io.original_filename)
        logger.info "path_for_file=#{@path_for_json_file}"
        logger.info ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>The JSON Uploader Info is: #{json_uploaded_io}"
-       File.open(@path_for_json_file, 'wb') do |jsonfile|
-	  jsonfile.write(json_uploaded_io.read)
+       if json_uploaded_io != nil
+	       File.open(@path_for_json_file, 'wb') do |jsonfile|
+	       		jsonfile.write(json_uploaded_io.read)
+	       end
        end
      rescue => e
        @error_message = e
