@@ -29,7 +29,7 @@ if [ "$RESULT" = 'OK' ]; then
 	#echo "It's totally cool."
 else
 	mysql -h $OPENSHIFT_MYSQL_DB_HOST -P $OPENSHIFT_MYSQL_DB_PORT -u $OPENSHIFT_MYSQL_DB_USERNAME -p$OPENSHIFT_MYSQL_DB_PASSWORD cucushiftvalidator < cucushift_dump.sql
-	mysql -h $OPENSHIFT_MYSQL_DB_HOST -P $OPENSHIFT_MYSQL_DB_PORT -u $OPENSHIFT_MYSQL_DB_USERNAME -p$OPENSHIFT_MYSQL_DB_PASSWORD cucushiftvalidator -e "UPDATE step_db_versions set version=NOW();"
+	mysql -h $OPENSHIFT_MYSQL_DB_HOST -P $OPENSHIFT_MYSQL_DB_PORT -u $OPENSHIFT_MYSQL_DB_USERNAME -p$OPENSHIFT_MYSQL_DB_PASSWORD cucushiftvalidator -e "UPDATE step_db_versions set version=UTC_TIMESTAMP();"
 	mysql -h $OPENSHIFT_MYSQL_DB_HOST -P $OPENSHIFT_MYSQL_DB_PORT -u $OPENSHIFT_MYSQL_DB_USERNAME -p$OPENSHIFT_MYSQL_DB_PASSWORD cucushiftvalidator -e "UPDATE step_db_versions set dbhash=\"$NEWMD5\";"
 fi
   
