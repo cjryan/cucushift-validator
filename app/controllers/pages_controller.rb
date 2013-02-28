@@ -71,8 +71,10 @@ class PagesController < ApplicationController
        logger.info "path_for_file=#{@path_for_file}"
        logger.info ENV['OPENSHIFT_TMP_DIR']
        #The write mode should be 'wb' to avoid encoding errors.
-       File.open(@path_for_file, 'wb') do |file|
-         file.write(uploaded_io.read)
+       if uploaded_io != nil
+       		File.open(@path_for_file, 'wb') do |file|
+        	file.write(uploaded_io.read)
+		end
        end
 
        @path_for_json_file = Rails.root.join(ENV['OPENSHIFT_TMP_DIR'], json_uploaded_io.original_filename)
