@@ -10,6 +10,7 @@ gem 'mysql2'
 gem 'sqlite3'
 gem 'execjs'
 gem 'therubyracer'
+gem 'active_support'
 
 
 # Gems used only for assets and not required
