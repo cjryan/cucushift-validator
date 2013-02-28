@@ -5,4 +5,4 @@ require File.expand_path('../application', __FILE__)
 RailsApp::Application.initialize!
 
 #Set Timezone
-config.time_zone = 'EST'
+#config.time_zone = 'EST'
