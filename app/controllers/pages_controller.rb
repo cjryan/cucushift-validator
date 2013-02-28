@@ -65,7 +65,7 @@ class PagesController < ApplicationController
      begin
        uploaded_io = params[:sql_gz]
        #Add some logic here to check if the file is a tar.gz file.
-       @path_for_file = Rails.root.join(ENV['OPENSHIFT_TMP_DIR'], cucushift_dump.sql.tar.bz2)
+       @path_for_file = Rails.root.join(ENV['OPENSHIFT_TMP_DIR'], 'cucushift_dump.sql.tar.bz2')
        logger.info "path_for_file=#{@path_for_file}"
        logger.info ENV['OPENSHIFT_TMP_DIR']
        #The write mode should be 'wb' to avoid encoding errors.
