@@ -64,13 +64,21 @@ class PagesController < ApplicationController
      @title = "Cucushift Validator Status"
      begin
        uploaded_io = params[:sql_gz]
-       #Add some logic here to check if the file is a tar.gz file.
+       json_uploaded_io = params[:json_upload]
+
+       #Add some logic here to check if the file is a .bz2 file.
        @path_for_file = Rails.root.join(ENV['OPENSHIFT_TMP_DIR'], 'cucushift_dump.sql.bz2')
        logger.info "path_for_file=#{@path_for_file}"
        logger.info ENV['OPENSHIFT_TMP_DIR']
        #The write mode should be 'wb' to avoid encoding errors.
        File.open(@path_for_file, 'wb') do |file|
          file.write(uploaded_io.read)
+       end
+
+       @path_for_json_file = Rails.root.join(ENV['OPENSHIFT_TMP_DIR'], json_uploaded_io.original_filename)
+       logger.info "path_for_file=#{@path_for_json_file}"
+       File.open(@path_for_json_file, 'wb') do |jsonfile|
+	  file.write(json_uploaded_io.read)
        end
      rescue => e
        @error_message = e

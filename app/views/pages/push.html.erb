@@ -2,5 +2,7 @@
 <%= form_tag({:action => :push}, :multipart => true) do %>
   <%= file_field_tag 'sql_gz' %>
   <br />
+  <%= file_field_tag 'json_upload' %>
+  <br />
   <%= submit_tag "Upload" %>
 <% end %>
