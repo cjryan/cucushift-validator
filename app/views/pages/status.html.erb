@@ -1,6 +1,17 @@
-
+<script>
+ $(function() {
+	$( "#tabs" ).tabs();
+});
+</script>
 <h1>Status of Cucushift steps</h1>
 
+<div id="tabs">
+	<ul>
+		<li><a href="#tabs-1">Nunc tincidunt</a></li>
+		<li><a href="#tabs-2">Proin dolor</a></li>
+		<li><a href="#tabs-3">Aenean lacinia</a></li>
+	</ul>
+</div><!--end tabs -->
 <h2>Statistics</h2>
 <ul>
   <li>All defined steps: <%= @db_for_stats.length %>
