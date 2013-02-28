@@ -1,0 +1,1 @@
+Add a timezone indicator on the front page under the database version for Beijing, Central Europe, and US Pacific timezones.
