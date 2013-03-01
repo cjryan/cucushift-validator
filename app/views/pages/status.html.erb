@@ -12,6 +12,7 @@
 		<li><a href="#tabs-3">Aenean lacinia</a></li>
 	</ul>
 </div><!--end tabs -->
+
 <div id="tabs-1">
 <h2>Statistics</h2>
 <ul>
@@ -27,40 +28,7 @@
 <% end %>
 </table>
 </div><!-- end tabs-1 -->
+
 <div id="tabs-2">
 	<p>Other stuff.</p>
-</div>
-<div id="gridContainer4" style="width: 400px; height: 200px;"></div>
-
-<script>
-dojo.require("dojox.grid.DataGrid");
-dojo.require("dojox.data.CsvStore");
-
-dojo.ready(function(){
-
-  // our test data store for this example:
-  var store4 = new dojox.data.CsvStore({ url: '{{dataUrl}}dojox/grid/tests/support/movies.csv' });
-
-  // set the layout structure:
-  var layout4 = [
-      { field: 'Title', name: 'Title of Movie', width: '200px' },
-      { field: 'Year', name: 'Year', width: '50px' },
-      { field: 'Producer', name: 'Producer', width: 'auto' }
-      ];
-
-  // create a new grid:
-  var grid4 = new dojox.grid.DataGrid({
-    query: { Title: '*' },
-    store: store4,
-    clientSort: true,
-    rowSelector: '20px',
-    structure: layout4
-    }, document.createElement('div'));
-
-  // append the new grid to the div "gridContainer4":
-  dojo.byId("gridContainer4").appendChild(grid4.domNode);
-
-  // Call startup, in order to render the grid:
-  grid4.startup();
-});
-</script>
+</div><!-- end tabs-2 -->
