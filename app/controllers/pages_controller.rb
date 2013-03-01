@@ -87,6 +87,7 @@ class PagesController < ApplicationController
        end
 
 	hash = JSON.parse(@path_for_json_file)
+	logger.info hash
      rescue => e
        @error_message = e
        logger.info "ERR: #{@error_message}"
