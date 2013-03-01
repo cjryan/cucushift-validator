@@ -14,7 +14,7 @@
 		  <li>All used steps: <%= @db_for_stats.length %>
 	</ul>
 
-	<table>
+	<table class="stripeMe">
 		<tr><th>Step name</td><th>number of steps used</th><th>rubular</th></tr>
 		<%  @db_for_stats.each do |item| %>
 		  <tr><td><%= item[:re_value] %></td><td><a href="TODO"> item[:re_used_times]</a> </td><td><a href="http://rubular.com/?regex=<%= item[:re_value] %>">rubular</a></td></tr>
@@ -27,5 +27,18 @@
 </div><!-- end tabs-2 -->
 </div><!-- end tabs -->
 <script>
+	/*Add tabs to the page*/
 	$( "#tabs" ).tabs();
+
+	/*Add zebra striping to the table*/
+	$(".stripeMe tr:even").addClass("alt");
+
+	$(".stripeMe tr").mouseover(function() {
+		$(this).addClass("over");
+	});
+
+	$(".stripeMe tr").mouseout(function() {
+		$(this).removeClass("over");
+	});
+
 </script>
