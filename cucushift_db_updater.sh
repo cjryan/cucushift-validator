@@ -8,7 +8,7 @@
 
 #Unzip the cucushift_dump.sql.tar.gz sent over by bulldozer
 cd $OPENSHIFT_TMP_DIR 
-bunzip2 cucushift_dump.sql.bz2
+bunzip2 -f cucushift_dump.sql.bz2
 FRESH_DUMP="cucushift_dump.sql"
 
 #Create an md5 sum of the sql file to see if anything has changed since the last time
